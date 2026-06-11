@@ -3,7 +3,7 @@ name: Angular 13 Build Pipeline
 on:
   push:
     branches: [ "main" ]
-    tags: [ 'v*' ] # e.g.  v1.0.0
+    tags: [ 'v*' ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
@@ -38,8 +38,17 @@ jobs:
           name: angular-production-build
           path: dist/angular-13/
 
+      - name: Package Build as Zip
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          ZIP_NAME="angular-13_${GITHUB_REF_NAME}.zip"
+          echo "Creating $ZIP_NAME..."
+          cd dist/angular-13/
+          zip -r "../../$ZIP_NAME" .
+          echo "ZIP_PATH=$ZIP_NAME" >> $GITHUB_ENV
+
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/angular-13/*
+          files: ${{ env.ZIP_PATH }}
