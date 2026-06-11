@@ -1,3 +1,40 @@
 {
-  "productList": []
+  "productList": [
+    {
+      "productName": "akjdkasjdk",
+      "category": "Vegetables",
+      "date": "2026-06-10T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 123,
+      "comment": "tertert",
+      "id": 1
+    },
+    {
+      "productName": "jjty",
+      "category": "Electronics",
+      "date": "2026-06-09T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 77,
+      "comment": "yutut",
+      "id": 2
+    },
+    {
+      "productName": "kuk",
+      "category": "Fruits",
+      "date": "2026-06-24T18:30:00.000Z",
+      "freshness": "Refurbished",
+      "price": 222,
+      "comment": "tyty",
+      "id": 3
+    },
+    {
+      "productName": "a",
+      "category": "Fruits",
+      "date": "2026-06-24T18:30:00.000Z",
+      "freshness": "Refurbished",
+      "price": 1111,
+      "comment": "rgrtgtg",
+      "id": 5
+    }
+  ]
 }
